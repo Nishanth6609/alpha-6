@@ -2,9 +2,12 @@
 
 A.L.P.H.A - 6 is a Windows laptop assistant with a dark dashboard, chat, optional voice input, local memory, and a small set of confirmed desktop actions.
 
-## Browser version
+## Browser versions
 
-A browser version with the same dark ALPHA style is prepared in the docs folder. When GitHub Pages is enabled, it will be available at https://nishanth6609.github.io/alpha-6/ . Chat runs through Ollama installed on each visitor's own laptop; there is no shared AI server or API key. Users need to install Ollama, download the llama3.2 model, and allow the Pages website origin as described in the [web setup guide](docs/SETUP.md). Chat history stays in their browser. This browser version cannot control the computer, read local files, or use the desktop app's optional voice and device features.
+- [Local Ollama version](https://nishanth6609.github.io/alpha-6/) uses Ollama installed on the visitor's laptop. See [the web setup guide](docs/SETUP.md).
+- [Cloud version](https://nishanth6609.github.io/alpha-6/cloud/) supports multiple API key profiles for OpenAI-compatible providers, including custom endpoints and Gemini's compatible endpoint. Keys stay in the browser tab's session storage and are sent directly to the selected provider. See [the cloud setup guide](docs/cloud/SETUP.md).
+
+Both browser versions keep chat history in the visitor's browser and cannot control the computer, read local files, or use the desktop app's optional voice and device features. Cloud providers set their own API usage fees and limits.
 
 ## Get started
 
@@ -38,4 +41,4 @@ Pushing a version tag such as `v1.0.0` runs the GitHub Actions workflow and atta
 
 ## Project status
 
-The Windows desktop dashboard starts with `gui_app.py`. The separate static browser interface is in `docs/` and is deployed with GitHub Actions when Pages is enabled for the repository. The web chat connects only to Ollama running on the visitor's computer.
+The Windows desktop dashboard starts with `gui_app.py`. The static browser interfaces are in `docs/` and are deployed with GitHub Actions when Pages is enabled for the repository.
