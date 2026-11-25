@@ -1,0 +1,47 @@
+name: Windows build
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt pyinstaller
+
+      - name: Build dashboard
+        run: >-
+          pyinstaller --noconfirm --clean --windowed --name ALPHA-6
+          --icon ALPHA-6.ico --add-data "assets;assets" gui_app.py
+
+      - name: Package Windows app
+        run: Compress-Archive -Path dist/ALPHA-6 -DestinationPath ALPHA-6-Windows.zip
+
+      - name: Save build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ALPHA-6-Windows
+          path: ALPHA-6-Windows.zip
+
+      - name: Publish GitHub Release asset
+        if: startsWith(github.ref, 'refs/tags/')
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "$env:GITHUB_REF_NAME" ALPHA-6-Windows.zip --title "A.L.P.H.A - 6 $env:GITHUB_REF_NAME" --generate-notes
