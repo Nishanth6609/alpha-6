@@ -2,6 +2,10 @@
 
 A.L.P.H.A - 6 is a Windows laptop assistant with a dark dashboard, chat, optional voice input, local memory, and a small set of confirmed desktop actions.
 
+## Browser version
+
+A browser version with the same dark ALPHA style is prepared in the docs folder. When GitHub Pages is enabled, it will be available at https://nishanth6609.github.io/alpha-6/ . Chat runs through Ollama installed on each visitor's own laptop; there is no shared AI server or API key. Users need to install Ollama, download the llama3.2 model, and allow the Pages website origin as described in the [web setup guide](docs/SETUP.md). Chat history stays in their browser. This browser version cannot control the computer, read local files, or use the desktop app's optional voice and device features.
+
 ## Get started
 
 1. Download the latest `ALPHA-6-Windows.zip` from the [Releases](../../releases) page and extract it. If no release is available yet, use **Code → Download ZIP** to get the source.
@@ -34,4 +38,4 @@ Pushing a version tag such as `v1.0.0` runs the GitHub Actions workflow and atta
 
 ## Project status
 
-This is a Windows desktop program; GitHub Pages cannot run the assistant itself. Users download the Windows release or source and run it on their own laptop. The shared dashboard starts with `gui_app.py`.
+The Windows desktop dashboard starts with `gui_app.py`. The separate static browser interface is in `docs/` and is deployed with GitHub Actions when Pages is enabled for the repository. The web chat connects only to Ollama running on the visitor's computer.
