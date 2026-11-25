@@ -1,0 +1,44 @@
+# Python environments and caches
+.venv/
+.venv*/
+venv/
+__pycache__/
+*.py[cod]
+
+# Local conversations, settings, recordings, and databases
+memory.json
+*.db
+*.sqlite
+*.sqlite3
+alpha_memory.db
+sunday_memory.db
+voice_settings.json
+my_voice.wav
+*.wav
+
+# Older standalone launchers are not part of the shared dashboard package
+app.py
+alpha.py
+alpha_app.py
+run_xtts_app.bat
+README.txt
+PORTABLE_README.txt
+
+# Downloaded speech models and generated packages
+vosk-model*/
+build/
+dist/
+_build/
+*_build_work/
+*_release/
+portable_build/
+portable_release/
+*.zip
+*.exe
+*.spec
+
+# Local editor and operating-system files
+.vscode/
+.idea/
+Thumbs.db
+Desktop.ini
