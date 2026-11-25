@@ -1,3 +1,5 @@
 # A.L.P.H.A Cloud Edition
 
-This folder contains the separate OpenRouter powered browser assistant. The original Ollama browser version and desktop app remain unchanged. Each visitor connects with their own OpenRouter API key in Settings; no shared key is stored in this repository.
+Open the [cloud assistant](https://nishanth6609.github.io/alpha-6/cloud/) in a browser. Read [SETUP.md](SETUP.md) for API key instructions.
+
+This edition uses each visitor's own OpenRouter API key. It is separate from the Ollama based assistant at the site root; no shared key is stored in this repository.
