@@ -5,7 +5,7 @@ A.L.P.H.A - 6 is a Windows laptop assistant with a dark dashboard, chat, optiona
 ## Browser versions
 
 - [Local Ollama version](https://nishanth6609.github.io/alpha-6/) uses Ollama installed on the visitor's laptop. See [the web setup guide](docs/SETUP.md).
-- [Cloud version](https://nishanth6609.github.io/alpha-6/cloud/) supports multiple API key profiles for OpenAI-compatible providers, including custom endpoints and Gemini's compatible endpoint. Keys stay in the browser tab's session storage and are sent directly to the selected provider. See [the cloud setup guide](docs/cloud/SETUP.md).
+- [Cloud version](https://nishanth6609.github.io/alpha-6/cloud/) uses one visitor-owned OpenRouter API key and automatically selects OpenRouter's free model router. Keys stay in the browser tab's session storage and are sent directly to OpenRouter. See [the cloud setup guide](docs/cloud/SETUP.md).
 
 Both browser versions keep chat history in the visitor's browser and cannot control the computer, read local files, or use the desktop app's optional voice and device features. Cloud providers set their own API usage fees and limits.
 
